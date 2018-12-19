@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<include file="struts-default.xml" />  
+	<!--  package:
+	name:必须有。唯一。标识一个包， 好有一定的含义。
+	extends:一般要求必须继承struts-default的包。
+	不继承该包，将无法使用struts2提供的一些核心功能,
+	struts-default包在struts-default.xml中有配置，加载自己的struts.xml文件之前，
+	框架就已经加载了struts-default.xml配置文件，所以我们可以使用。
+	namespace:名称空间。默认值是""，称之为默认名称空间。取值一般以/开头。
+	namespace和的name共同组成了用户访问的URI.
+--> 
+	<package name="default"  extends="struts-default" >
+		<action name="LoginAction" class="com.jiabin.nanitan.login.action.LoginAction" method="execute">
+		<!--name:逻辑视图名称，和action类方法的返回值对应。默认是success
+			type：转向实际视图的方式。默认是dispatcher,转发，目标是一个页面。   -->
+			<result name="success">/success.jsp</result>
+		</action>
+		
+	</package>
+</struts>
